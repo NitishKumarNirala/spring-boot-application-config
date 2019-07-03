@@ -1,0 +1,139 @@
+### Spring Boot Application Properties (see https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html) ###
+debug=true
+#spring.main.allow-bean-definition-overriding=true
+
+### Profiles ###
+#spring.profiles.active=local
+
+# HTTPS Server port
+server.ssl.key-store-type=PKCS12
+server.ssl.key-store=classpath:dBName-keystore.p12
+server.ssl.key-store-password=4555555
+server.ssl.key-alias=tomcat
+server.port=9090
+#HTTP port add 
+http.port=9000
+
+# Make the application accessible on the given context path (http://localhost:8080/myapp)
+server.servlet.context-path=/
+
+### GZIP Compression ###
+# Enable response compression
+server.compression.enabled=true
+# The comma-separated list of mime types that should be compressed
+server.compression.mime-types=text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+# Compress the response only if the response size is at least 1KB
+server.compression.min-response-size=1024
+
+### HTTP/2 ###
+# Enable HTTP/2 support, if the current environment supports it
+server.http2.enabled=true
+
+# Removing null values from JSON responses in Spring Boot
+spring.jackson.default-property-inclusion: NON_NULL
+
+### Browser Caching ###
+# Maximum time the response should be cached (in seconds) 
+spring.resources.cache.cachecontrol.max-age=120
+
+# The cache must re-validate stale resources with the server. Any expired resources must not be used without re-validating.
+spring.resources.cache.cachecontrol.must-revalidate=true
+
+### SSL ### comment if not required
+#security.require-ssl=true
+
+#server.ssl.key-store-type=PKCS12
+#server.ssl.key-store=classpath:dbma-keystore.p12
+#server.ssl.key-store-password=tagit123
+#server.ssl.key-alias=tomcat
+
+### JSON ###
+# Preferred JSON mapper to use for HTTP message conversion.
+spring.http.converters.preferred-json-mapper=gson
+
+### GSON ###
+spring.gson.date-format=yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+spring.gson.disable-html-escaping=false
+spring.gson.serialize-nulls=false
+spring.gson.pretty-printing=true
+
+### Swagger ###
+#springfox.documentation.swagger.v2.path = /api-docs
+
+### MVC ###
+spring.mvc.throw-exception-if-no-handler-found=true
+
+### Data Rest ###
+#spring.data.rest.base-path=/api
+#spring.data.rest.detection-strategy=annotated
+
+### DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+#spring.datasource.jndi-name=java:/MobeixAdminDataSource # JNDI location of the datasource. Class, url, username & password are ignored when set.
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=dftrt
+spring.datasource.password=4545445645
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+
+### JPA ###
+spring.data.jpa.repositories.bootstrap-mode=default
+spring.data.jpa.repositories.enabled=true
+#spring.jpa.database= # Target database to operate on, auto-detected by default. Can be alternatively set using the "databasePlatform" property.
+#spring.jpa.database-platform= # Name of the target database to operate on, auto-detected by default. Can be alternatively set using the "Database" enum.
+spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
+#spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+#spring.jpa.hibernate.ddl-auto= # DDL mode. This is actually a shortcut for the "hibernate.hbm2ddl.auto" property. Defaults to "create-drop" when using an embedded database and no schema manager was detected. Otherwise, defaults to "none".
+#spring.jpa.hibernate.naming.implicit-strategy= # Fully qualified name of the implicit naming strategy.
+#spring.jpa.hibernate.naming.physical-strategy= # Fully qualified name of the physical naming strategy.
+# Ensure Hibernate will default to the old identity generation
+spring.jpa.hibernate.use-new-id-generator-mappings=false
+#spring.jpa.mapping-resources= # Mapping resources (equivalent to "mapping-file" entries in persistence.xml).
+#spring.jpa.properties.*= # Additional native properties to set on the JPA provider.
+spring.jpa.show-sql=true
+
+# JTA (JtaAutoConfiguration)
+#spring.jta.enabled=true # Whether to enable JTA support.
+#spring.jta.log-dir= # Transaction logs directory.
+#spring.jta.transaction-manager-id= # Transaction manager unique identifier.
+
+# TRANSACTION (TransactionProperties)
+#spring.transaction.default-timeout= # Default transaction timeout. If a duration suffix is not specified, seconds will be used.
+#spring.transaction.rollback-on-commit-failure= # Whether to roll back on commit failures.
+
+### DATA WEB (SpringDataWebProperties) ###
+spring.data.web.pageable.default-page-size=10
+spring.data.web.pageable.max-page-size=2000
+#spring.data.web.pageable.one-indexed-parameters=false # Whether to expose and assume 1-based page number indexes.
+#spring.data.web.pageable.page-parameter=page # Page index parameter name.
+#spring.data.web.pageable.prefix= # General prefix to be prepended to the page number and page size parameters.
+#spring.data.web.pageable.qualifier-delimiter=_ # Delimiter to be used between the qualifier and the actual page number and size properties.
+#spring.data.web.pageable.size-parameter=size # Page size parameter name.
+#spring.data.web.sort.sort-parameter=sort # Sort parameter name.
+
+### Performance ###
+spring.jmx.enabled=false
+
+spring.flyway.locations=classpath:db/migration/{vendor}/dbma # Locations of migrations scripts. Can contain the special "{vendor}" placeholder to use vendor-specific locations.
+
+### FLYWAY (FlywayProperties) ### Spring Boot Flyway doesn't work with Flyway 4.2.0
+spring.flyway.enabled=false
+
+### Mobeix Extensions ###
+#mobeix.ext.enabled=true
+#mobeix.ext.merchant-keyword=SY
+#mobeix.ext.language-code=EN
+#mobeix.ext.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+#mobeix.ext.datasource.username=tertert
+#mobeix.ext.datasource.password=78778787
+#mobeix.ext.flyway.enabled=false
+#mobeix.ext.flyway.table=DBMA_ADM_SCHEMA_HISTORY
+#mobeix.ext.flyway.location-suffix=dbma/adm/
+#mobeix.ext.flyway.baseline-version=0
+
+### Tagit Core Flyway ###
+tagit.core.flyway.enabled=true
+tagit.core.flyway.table=DBMA_SCHEMA_HISTORY
+tagit.core.flyway.location-suffix=dbma/
+tagit.core.flyway.baseline-version=0
+
+### Tagit Core Rest ###
+tagit.core.rest.audit-enabled=true
