@@ -9,4 +9,4 @@ exp userName/Password@HostId owner=UserName file=dumpName_20190822.dmp log=dumpN
 
 imp system/system@localhost:1521 fromuser=userName touser=useName file=c:\users\nitishkumar.nirala\desktop\dumpName_20190822.dmp log=abc.log commit=y;
 
-imp system/system@localhost:1521 fromuser=dcb touser=dcb file=e:\mobeix6.7\mobeix6.7\dcb_local_rj_20180201pm.dmp log=abc.log commit=y;
+imp system/system@localhost:1521 fromuser=myu touser=myu file=e:\unversity\management\localDb_20180201pm.dmp log=abc.log commit=y;
