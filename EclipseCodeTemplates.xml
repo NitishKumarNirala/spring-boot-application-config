@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="filecomment_context" deleted="false" description="Comment for created Java files" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.filecomment" name="filecomment">/** 
+ * Copyright ${year} by Tagit Ltd. (http://www.tagitmobile.com)
+ *
+ * This source code is the exclusive property of Tagit Pte and is protected 
+ * by Singapore. and international copyright laws. Any other use, including the 
+ * reproduction, modification, distribution, transmission, republication, 
+ * display, or performance, of the source code is strictly prohibited.
+ *
+ * Developed by Tagit Pte (http://www.tagitmobile.com)
+ */</template><template autoinsert="false" context="typecomment_context" deleted="false" description="Comment for created types" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment">/**
+ * ${type_name}.
+ *
+ * @author ${user}
+ * @version $$Id: ${file_name} ${date} ${time}
+ *
+ * @since 1.0
+ */</template></templates>
