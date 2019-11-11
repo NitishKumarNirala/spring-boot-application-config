@@ -1,36 +1,12 @@
-create user dcb identified by tagit123;
-grant connect to dcb identified by tagit123;
-grant all privileges to dcb identified by tagit123;
-grant connect, resource, dba to dcb;
-grant unlimited tablespace to dcb;
-grant create session to dcb;
+create user DBName identified by password;--user123
+grant connect to DBName identified by password;
+grant all privileges to DBName identified by password;
+grant connect, resource, DBName to DBName_scheme;
+grant unlimited tablespace to DBName;
+grant create session to DBName;
 
-exp tagit/tagit123@172.17.0.124 owner=tagit file=mrb_dev_20190822.dmp log=mrb_dev_20190822.dmp.elog
+exp userName/Password@HostId owner=UserName file=dumpName_20190822.dmp log=dumpName_20190822.dmp .elog
 
-imp system/system@localhost:1521 fromuser=dcb touser=dcb file=c:\users\nitishkumar.nirala\desktop\dcbqa_20180117.dmp log=abc.log commit=y;
+imp system/system@localhost:1521 fromuser=userName touser=useName file=c:\users\nitishkumar.nirala\desktop\dumpName_20190822.dmp log=abc.log commit=y;
 
 imp system/system@localhost:1521 fromuser=dcb touser=dcb file=e:\mobeix6.7\mobeix6.7\dcb_local_rj_20180201pm.dmp log=abc.log commit=y;
-imp dcb/tagit123@localhost:1521 fromuser=dcb touser=dcb file=c:\users\nitishkumar.nirala\desktop\dcblocal_20180302.dmp commit=y;
-
-exp dcb_ldb/tagit123 owner=dcb_ldb file=dcblocal_20181102.dmp log=dcblocal_20181102.elog statistics=none
-   dateformat dateformat = new simpledateformat("yyyymmdd");
-            date mydate = new date(system.currenttimemillis());
-            system.out.println("result is "+ dateformat.format(mydate));
-            calendar cal = calendar.getinstance();
-            cal.settime(mydate);
-            cal.add(calendar.date, -10);
-            system.out.println(dateformat.format(cal.gettime()));
-			
-			
-			
-			
-			
-
-			
-			imp system/tagit123@localhost:1521 fromuser=tagit touser=AUF file="d:\mrb_dev_20190822.dmp" commit=y;
-			
-			
-			
-			exp system/tagit123@172.17.0.127 owner=tagit file=mrb_dev_20190822.dmp log=mrb_dev_20190822.dmp.elog
-
-imp AUF/tagit123@localhost:1521 fromuser=tagit touser=AUF file="D:\mrb_dev_20190822.dmp" commit=Y;
