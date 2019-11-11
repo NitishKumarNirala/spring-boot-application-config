@@ -10,3 +10,25 @@ exp userName/Password@HostId owner=UserName file=dumpName_20190822.dmp log=dumpN
 imp system/system@localhost:1521 fromuser=userName touser=useName file=c:\users\nitishkumar.nirala\desktop\dumpName_20190822.dmp log=abc.log commit=y;
 
 imp system/system@localhost:1521 fromuser=myu touser=myu file=e:\unversity\management\localDb_20180201pm.dmp log=abc.log commit=y;
+
+
+
+  compileOnly 'javax.servlet:javax.servlet-api:3.1.0' // instead of tomcat, this allows seamless deployment to J2EE containers
+	testCompileOnly 'javax.servlet:javax.servlet-api:3.1.0' // instead of tomcat, this allows seamless deployment to J2EE containers
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+	
+ 
+    // ### Unit Testing ###
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+	testCompile('org.junit.jupiter:junit-jupiter-params:5.3.1')
+	testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.1')	
+	testRuntime('org.junit.vintage:junit-vintage-engine:5.3.1')	 
+	
+    testCompile('org.mockito:mockito-core:2.23.4')
+    testCompile('org.mockito:mockito-junit-jupiter:2.23.4')
+
+	
+	compile files('lib/oracle/ojdbc7.jar')
+	compile files('lib/sqlserver/sqljdbc4.jar')
+	compile ('mysql:mysql-connector-java')
