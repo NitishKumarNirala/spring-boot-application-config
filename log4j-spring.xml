@@ -44,11 +44,11 @@
 			<AppenderRef ref="ConsoleAppender" />
 			<!-- <AppenderRef ref="FileAppender" /> -->
 		</AsyncLogger>
-		<AsyncLogger name="com.tagit" level="DEBUG" additivity="false">
+		<AsyncLogger name="com.app" level="DEBUG" additivity="false">
 			<AppenderRef ref="ConsoleAppender" />
 			<!-- <AppenderRef ref="FileAppender" /> -->
 		</AsyncLogger>
-		<AsyncLogger name="com.tagit.commons.core.web.rest.filter" level="TRACE" additivity="false">
+		<AsyncLogger name="com.app.commons.core.web.rest.filter" level="TRACE" additivity="false">
 			<AppenderRef ref="ConsoleAppender" />
 			<!-- <AppenderRef ref="FileAppender" /> -->
 		</AsyncLogger>
