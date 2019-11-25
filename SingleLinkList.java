@@ -1,4 +1,4 @@
-package com.tagit.digital.commons.dbmm.admin.rest;
+package com.dataStructure;
 
 public class SingleLinkList {
    
